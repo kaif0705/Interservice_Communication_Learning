@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: Provider
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+#      Eureka service URL
+      defaultZone: "http://localhost:8761/eureka"
+#    As this is client, it needs to register and fetch eureka server
+    register-with-eureka: true
+    fetch-registry: true
+
+#Actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
+  endpoint:
+    shutdown:
+      enabled: true
